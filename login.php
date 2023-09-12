@@ -32,19 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <?php require_once("head.php"); ?>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $(".toggle-password").click(function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-                input.attr("type", "text");
-            } else {
-                input.attr("type", "password");
-            }
-        });
-
-
+$(document).ready(function() {
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
     });
+
+
+});
 </script>
 
 <body class="home-page">
@@ -67,9 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <?php
                         if (isset($error)) {
                         ?>
-                            <div class="alert worng">
-                                <?= $error ?>
-                            </div>
+                        <div class="alert worng">
+                            <?= $error ?>
+                        </div>
                         <?php
                         }
                         ?>
@@ -80,15 +80,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="form-row">
                                     <label for="user">اسم الدخول</label>
                                     <div class="controls">
-                                        <input type="text" name="user" id="user" required>
+                                        <input type="text" autocomplete=off name="user" id="user" required>
 
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <label for="pass">كلمة السر</label>
                                     <div class="controls">
-                                        <input type="password" name="pass" id="pass" required>
-                                        <span toggle="#pass" title="اظهار الباسورد" class="fa fa-eye field-icon toggle-password"></span>
+                                        <input type="password" name="pass" id="pass" autocomplete=off required>
+                                        <span toggle="#pass" title="اظهار الباسورد"
+                                            class="fa fa-eye field-icon toggle-password"></span>
                                     </div>
                                 </div>
                             </div>

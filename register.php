@@ -47,35 +47,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <?php require_once("head.php"); ?>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $(".toggle-password").click(function() {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-                input.attr("type", "text");
-            } else {
-                input.attr("type", "password");
-            }
-        });
-        $('input[name="idType"]').on('click', function() {
-            if ($(this).val() == '2') {
-                $('#passp').show();
-                $('#passp input[name="passNo"]').prop('required', true);
-                $('#natid').hide();
-                $('#natid input[name="idNo"]').val('');
-                $('#natid input[name="idNo"]').prop('required', false);
-            } else {
-                $('#natid').show();
-                $('#natid input[name="idNo"]').prop('required', true);
-                $('#passp').hide();
-                $('#passp input[name="passNo"]').val('');
-                $('#passp input[name="passNo"]').prop('required', false);
-            }
-        });
-        $('#myCheckbox').click(function() {
-            $('#submit').prop("disabled", !$("#myCheckbox").prop("checked"));
-        })
+$(document).ready(function() {
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
     });
+    $('input[name="idType"]').on('click', function() {
+        if ($(this).val() == '2') {
+            $('#passp').show();
+            $('#passp input[name="passNo"]').prop('required', true);
+            $('#natid').hide();
+            $('#natid input[name="idNo"]').val('');
+            $('#natid input[name="idNo"]').prop('required', false);
+        } else {
+            $('#natid').show();
+            $('#natid input[name="idNo"]').prop('required', true);
+            $('#passp').hide();
+            $('#passp input[name="passNo"]').val('');
+            $('#passp input[name="passNo"]').prop('required', false);
+        }
+    });
+    $('#myCheckbox').click(function() {
+        $('#submit').prop("disabled", !$("#myCheckbox").prop("checked"));
+    })
+});
 </script>
 
 <body class="home-page">
@@ -106,14 +106,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <?php
                         if (isset($error)) {
                         ?>
-                            <div class="alert worng">
-                                <?= implode('<br>', $error) ?>
-                            </div>
+                        <div class="alert worng">
+                            <?= implode('<br>', $error) ?>
+                        </div>
                         <?php
                         }
                         ?>
                         <!-- -->
-                        <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+                        <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" autocomplete="off">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -121,15 +121,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="user">اسم الدخول</label>
                                             <div class="controls">
-                                                <input type="text" name="user" id="user" pattern="[A-Za-z0-9_-]{1,15}" title="Only letters (either case), numbers, and the underscore; no more than 15 characters" placeholder='تأكد من صلاحية الاسم' required>
+                                                <input type="text" name="user" id="user" pattern="[A-Za-z0-9_-]{1,15}"
+                                                    title="Only letters (either case), numbers, and the underscore; no more than 15 characters"
+                                                    placeholder='تأكد من صلاحية الاسم' autocomplete="off" required>
 
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <label for="pass">كلمة السر</label>
                                             <div class="controls">
-                                                <input type="password" name="pass" id="pass" placeholder="حروف كبيره وصغيره وارقام وعلامات خاصة" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required autocomplete="new-password" required>
-                                                <span toggle="#pass" title="اظهار الباسورد" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                                <input type="password" name="pass" id="pass"
+                                                    placeholder="حروف كبيره وصغيره وارقام وعلامات خاصة"
+                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}"
+                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                    required autocomplete="new-password" required>
+                                                <span toggle="#pass" title="اظهار الباسورد"
+                                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -143,13 +150,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="email">البريد الألكتروني</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder='---@---.--' required>
+                                                <input class="input--style-5" type="email" name="email"
+                                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                                    placeholder='---@---.--' autocomplete="off" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <label for="whatsapp">رقم whatsApp</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="whatsapp" placeholder='تواصل WhatsApp' pattern="[0-9]+">
+                                                <input class="input--style-5" type="text" name="whatsapp"
+                                                    placeholder='تواصل WhatsApp' autocomplete="off" pattern="[0-9]+">
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +175,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="ar_name">الاسم باللغة العربية</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="ar_name" placeholder='الاسم رباعي' required>
+                                                <input class="input--style-5" type="text" name="ar_name"
+                                                    placeholder='الاسم رباعي' autocomplete="off" required>
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +184,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="en_name">الاسم باللغة الانجليزية</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="en_name" placeholder='الاسم رباعي' required>
+                                                <input class="input--style-5" type="text" name="en_name"
+                                                    placeholder='الاسم رباعي' autocomplete="off" required>
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +195,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="birthdate">تاريخ الميلاد</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="date" name="birthdate">
+                                                <input class="input--style-5" autocomplete="off" type="date"
+                                                    name="birthdate">
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +220,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <label for="idType">اثبات الشخصية</label>
                                             <div class="controls">
                                                 <label class="radio-inline" id='radlab1'>
-                                                    <input type="radio" id='idType1' name="idType" value="1" checked>بطاقة رقم قومي
+                                                    <input type="radio" id='idType1' name="idType" value="1"
+                                                        checked>بطاقة رقم قومي
                                                 </label>
                                                 <label class="radio-inline" id='radlab2'>
                                                     <input type="radio" id='idType2' name="idType" value="2">جواز سفر
@@ -220,7 +234,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="idNo">الرقم القومى</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="idNo" pattern="[0-9]{14,14}" placeholder='تأكد من ادخال ال 14 رقم من اليسار الي اليمين' required>
+                                                <input class="input--style-5" type="text" name="idNo"
+                                                    pattern="[0-9]{14,14}" autocomplete="off"
+                                                    placeholder='تأكد من ادخال ال 14 رقم من اليسار الي اليمين' required>
                                             </div>
                                         </div>
                                     </div>
@@ -229,7 +245,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="passNo">جواز السفر*</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="passNo" pattern="[0-9]" placeholder='للطلاب الوافدين فقط'>
+                                                <input class="input--style-5" type="text" name="passNo" pattern="[0-9]"
+                                                    autocomplete="off" placeholder='للطلاب الوافدين فقط'>
                                             </div>
                                         </div>
                                     </div>
@@ -240,7 +257,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="job">المهنه</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="job">
+                                                <input class="input--style-5" type="text" autocomplete="off" name="job">
                                             </div>
                                         </div>
                                     </div>
@@ -248,7 +265,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="form-row">
                                             <label for="qualification">المؤهل العلمي</label>
                                             <div class="controls">
-                                                <input class="input--style-5" type="text" name="qualification">
+                                                <input class="input--style-5" autocomplete="off" type="text"
+                                                    name="qualification">
                                             </div>
                                         </div>
                                     </div>
@@ -261,7 +279,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <label>
                                                 <input type="checkbox" id="myCheckbox">
                                                 <span>
-                                                    أتعهد بعدم نشر المادة العلمية الخاصة بالتدريب علي الدورات التابعه للمركز الرئيسي للتدريب المستدام بما فيها دورات التحول الرقمي وذلك حفاظاُ علي حقوق الملكية الفكرية التابعة للمجلس الأعلي للجامعات.
+                                                    أتعهد بعدم نشر المادة العلمية الخاصة بالتدريب علي الدورات التابعه
+                                                    للمركز الرئيسي للتدريب المستدام بما فيها دورات التحول الرقمي وذلك
+                                                    حفاظاُ علي حقوق الملكية الفكرية التابعة للمجلس الأعلي للجامعات.
                                                     <br>
                                                     <strong>
                                                         مخالفة هذا التعهد يعرض للمساءلة القانونية.
