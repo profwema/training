@@ -10,8 +10,13 @@ a.home span:hover {
 }
 
 .small {
-  padding: 5px 15px !important;
-  width: 120px;
+  padding: 5px 10px !important;
+
+}
+
+.userName {
+  color: #f5f78c;
+  margin-left: 10px;
 }
 
 .list-inline {
