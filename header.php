@@ -67,23 +67,22 @@
                           if (isset($_SESSION['user'])) {
                           ?>
 
-                                        <a href="logout.php" class="small btn btn-danger rounded-0">
-                                            خروج
-                                        </a>
                                         <a href="dashboard.php" class="small btn btn-success  rounded-0">
-                                            لوحة القيادة
+                                            <span> <?= $_SESSION['ar_name'] ?></span>
                                         </a>
+                                        <a href="logout.php" class="small ">
+                                            تسجيل خروج
+                                        </a>
+
 
 
                                         <?php
                           } else {
                           ?>
-                                        <a href="login.php" class="small btn btn-info  rounded-0">
+                                        <a href="login.php" class="small login">
                                             تسجيل دخول
                                         </a>
-                                        <a href="register.php" class="small btn btn-warning  rounded-0">
-                                            حساب جديد
-                                        </a>
+
                                         <?php
                           }
                           ?>

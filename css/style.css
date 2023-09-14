@@ -11,8 +11,19 @@ a.home span:hover {
 
 .small {
   padding: 5px 10px !important;
+  color: #fff;
+  border: #FFF 2px solid;
+  border-radius: 20px;
+  float: left;
+
 
 }
+
+.login:hover {
+  background-color: rgb(60, 99, 22) !important;
+  color: #fff;
+}
+
 
 .userName {
   color: #f5f78c;
