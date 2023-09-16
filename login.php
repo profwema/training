@@ -64,39 +64,60 @@ $(document).ready(function() {
             <div class="container">
                 <div class="row">
                     <div class="single-top-popular-course d-flex flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
-                        <?php
+
+                        <div class="col-lg-6">
+                            <?php
                         if (isset($error)) {
                         ?>
-                        <div class="alert worng">
-                            <?= $error ?>
-                        </div>
-                        <?php
+                            <div class="alert worng">
+                                <?= $error ?>
+                            </div>
+                            <?php
                         }
                         ?>
-                        <!-- -->
-                        <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
-                            <div class="form-group">
-                                <div class="name"> بيانات تسجيل الدخول *</div>
-                                <div class="form-row">
-                                    <label for="user">اسم الدخول</label>
-                                    <div class="controls">
-                                        <input type="text" autocomplete=off name="user" id="user" required>
+                            <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+                                <div class="form-group">
+                                    <div class="name"> بيانات تسجيل الدخول *</div>
+                                    <div class="form-row">
+                                        <label for="user">اسم الدخول</label>
+                                        <div class="controls">
+                                            <input type="text" autocomplete=off name="user" id="user" required>
 
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="pass">كلمة السر</label>
+                                        <div class="controls">
+                                            <input type="password" name="pass" id="pass" autocomplete=off required>
+                                            <span toggle="#pass" title="اظهار الباسورد"
+                                                class="fa fa-eye field-icon toggle-password"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-row form-submit">
+                                        <!--                                         <div class='col-lg-8'>
+                                            <div class='forgetPass'>
+                                                نسيت كلمة السر
+                                            </div>
+                                        </div>
+                                        <div class='col-lg-4'>
+                                            <center>
+                                                <button class="btn submit" id='submit' type="submit">دخول </button>
+                                            </center>
+                                        </div> -->
+                                        <center>
+                                            <button class="btn submit" id='submit' type="submit">دخول </button>
+                                        </center>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <label for="pass">كلمة السر</label>
-                                    <div class="controls">
-                                        <input type="password" name="pass" id="pass" autocomplete=off required>
-                                        <span toggle="#pass" title="اظهار الباسورد"
-                                            class="fa fa-eye field-icon toggle-password"></span>
-                                    </div>
-                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="newAcount">
+                                <div class="name"> لبس لديك حساب بالفعل : قم بانشاء حساب جديد</div>
+
+
                             </div>
-                            <center>
-                                <button class="btn submit" id='submit' type="submit">دخول </button>
-                            </center>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

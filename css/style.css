@@ -165,6 +165,8 @@ a.home span:hover {
 
 }
 
+
+
 .m-b-55 {
   margin-bottom: 55px;
 }
@@ -180,6 +182,8 @@ a.home span:hover {
   background-color: #f1edf1;
   margin-bottom: 20px;
 }
+
+
 
 .form-row {
 
@@ -226,6 +230,7 @@ a.home span:hover {
 }
 
 
+
 input {
   background: #ffffff;
   border: 1px solid #aaa;
@@ -253,6 +258,18 @@ input {
   width: unset;
   margin-right: 5px !important;
   margin-left: 10px !important;
+
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgetPass {
+  text-align: right;
+  margin-right: 20px;
 
 }
 
