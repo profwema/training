@@ -60,39 +60,30 @@
                                                     الخدمات</a>
                                             </li>
                                         </ul>
-
                                     </div>
                                     <div class="mr-auto ml-auto">
                                         <?php
-                          if (isset($_SESSION['user'])) {
-                          ?>
-
-                                        <a href="dashboard.php" class="small btn btn-success  rounded-0">
-                                            <span> <?= $_SESSION['ar_name'] ?></span>
-                                        </a>
-                                        <a href="logout.php" class="small ">
+                                        if (isset($_SESSION['user'])) {
+                                        ?>
+                                        <a href="logout.php" class="small logout">
                                             تسجيل خروج
                                         </a>
-
-
-
+                                        <a href="dashboard.php" class="userName">
+                                            <?= $_SESSION['ar_name'] ?>
+                                        </a>
                                         <?php
-                          } else {
-                          ?>
+                                        } else {
+                                        ?>
                                         <a href="login.php" class="small login">
                                             تسجيل دخول
                                         </a>
-
                                         <?php
-                          }
-                          ?>
-
+                                         }
+                                        ?>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                         <!--/ Header Main wrapper -->
                     </div>
                 </div>

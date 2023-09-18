@@ -8,15 +8,9 @@ if (!isset($_SESSION['user'])) {
   header("Location:login.php ");
 }
 
-if (isset($_GET['dell'])) {
-  $data['id'] = $_GET['dell'];
-  $db->delCourseReg($data);
-}
 
-if (isset($_GET['pay'])) {
-  $data['id'] = $_GET['pay'];
-  $db->payCourseReg($data);
-}
+
+
 
 if (isset($_GET['putAtGroup'])) {
   $cond['id']       = $_GET['putAtGroup'];
@@ -54,13 +48,13 @@ if (isset($_GET['putAtGroup'])) {
                         <div class="col-lg-3">
                             <div class="dashbord-list">
                                 <ul>
-                                    <li class="active">
-                                        <a href="javascript:void(0)">
+                                    <li>
+                                        <a href="dashboard.php">
                                             <i class="fa fa-list"></i> الدورات الملتحق بها
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="updateInf.php">
+                                    <li class="active">
+                                        <a href="javascript:void(0)">
                                             <i class="fa fa-id-card"></i> معلومات شخصية
                                         </a>
                                     </li>
@@ -68,28 +62,42 @@ if (isset($_GET['putAtGroup'])) {
                             </div>
                         </div>
                         <div class="col-lg-9">
-                            <div class="dashboardTitle">الدورات الملتحق بها</div>
+                            <div class="dashboardTitle">معلومات الحساب</div>
                             <div class="dashbord-section">
                                 <?php
-                $i = 0;
-
-                $array['user_id'] = $_SESSION['user'];
-
-                $courses_reg = $db->getCoursesReg($array);
-
-                if (is_array($courses_reg))
-                  foreach ($courses_reg as $courseReg) : $i++;
-                    include 'reg_to_group.php';
-                  endforeach; ?>
+                                $array['id'] = $_SESSION['user'];
+                                $users = $db->getUsers($array);
+                                $user = $users[0];
+                                ?>
+                                <table class='userInf'>
+                                    <tr>
+                                        <td> الاسم :</td>
+                                        <td><?= $user['ar_name'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td> الاسم :</td>
+                                        <td><?= $user['ar_name'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td> الاسم :</td>
+                                        <td><?= $user['ar_name'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td> الاسم :</td>
+                                        <td><?= $user['ar_name'] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td> الاسم :</td>
+                                        <td><?= $user['ar_name'] ?></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
-    <?php require_once("footer.php"); ?>
+        <?php require_once("footer.php"); ?>
 </body>
 
 </html>

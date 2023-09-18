@@ -32,96 +32,97 @@ include('layout/head.php');
 
 
 <body class="rtl">
-	<?php
+    <?php
 	include('layout/header.php');
 	?>
-	<div class="main-container">
-		<?php
+    <div class="main-container">
+        <?php
 		include('layout/navbar.php');
 		?>
-		<div class="main-content">
-			<div class="container">
-				<!-- start: PAGE HEADER -->
-				<div class="row">
-					<div class="col-sm-12">
+        <div class="main-content">
+            <div class="container">
+                <!-- start: PAGE HEADER -->
+                <div class="row">
+                    <div class="col-sm-12">
 
-						<!-- start: PAGE TITLE & BREADCRUMB -->
-						<ol class="breadcrumb">
-							<li>
-								<i class="fa fa-home"></i>
-								<a href="index.php">
-									الرئيسية
-									<span class="selected"></span>
-								</a>
-							</li>
-							<li>
-								<a href="categories.php">
-									فئات الدورات
-									<span class="selected"></span>
-								</a>
-							</li>
-							<li class="active">
-								إضافة فئة جدديدة
+                        <!-- start: PAGE TITLE & BREADCRUMB -->
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="index.php">
+                                    الرئيسية
+                                    <span class="selected"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="categories.php">
+                                    فئات الدورات
+                                    <span class="selected"></span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                إضافة فئة جدديدة
 
-							</li>
+                            </li>
 
-						</ol>
+                        </ol>
 
-						<!-- end: PAGE TITLE & BREADCRUMB -->
-					</div>
-				</div>
-				<!-- end: PAGE HEADER -->
-				<!-- start: PAGE CONTENT -->
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-external-link-square"></i>
-								إضافة فئة جدديدة
-							</div>
-							<div class="panel-body">
-								<?php
+                        <!-- end: PAGE TITLE & BREADCRUMB -->
+                    </div>
+                </div>
+                <!-- end: PAGE HEADER -->
+                <!-- start: PAGE CONTENT -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-external-link-square"></i>
+                                إضافة فئة جدديدة
+                            </div>
+                            <div class="panel-body">
+                                <?php
 								if (isset($_SESSION[$sesion])) {
 									echo $_SESSION[$sesion];
 									unset($_SESSION[$sesion]);
 								}
 								?>
-								<form action="" method="post" enctype="multipart/form-data" id='cat-form' class="form-horizontal">
-									<div class="box-body">
-										<div class="form-group">
-											<label class="col-sm-2 control-label">اسم الفئة</label>
-											<div class="col-sm-10">
-												<input type="text" name="name" id="name" class="form-control" required>
-											</div>
-										</div>
-										<div class="form-group">
+                                <form action="" method="post" enctype="multipart/form-data" id='cat-form'
+                                    class="form-horizontal">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">اسم الفئة</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="name" id="name" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <!-- 										<div class="form-group">
 											<label class="col-sm-2 control-label">صورة الفئة</label>
 											<div class="col-sm-10">
-												<!-- <input type="file" 
+												 <input type="file" 
 												class="form-control" placeholder="رابط الصورة" 
-												name="pic"> -->
+												name="pic"> 
 												<input type="url" class="form-control" placeholder="رابط الصورة" name="pic">
 											</div>
-										</div>
-									</div>
-									<div class="box-footer">
-										<button class="btn btn-info pull-right" type="submit">إضافة</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php
+										</div> -->
+                                    </div>
+                                    <div class="box-footer">
+                                        <button class="btn btn-info pull-right" type="submit">إضافة</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
 	include('layout/sidebar.php');
 	?>
-	<!-- end: LEFT SIDEBAR -->
+    <!-- end: LEFT SIDEBAR -->
 
 
-	<?php
+    <?php
 	include('layout/footer.php');
 	?>
 </body>

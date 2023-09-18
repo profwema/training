@@ -114,8 +114,15 @@ $(document).ready(function() {
                         <div class="col-lg-6">
                             <div class="newAcount">
                                 <div class="name"> لبس لديك حساب بالفعل : قم بانشاء حساب جديد</div>
-
-
+                                <div class='typeC'>
+                                    <a href="#">انشاء حساب لطالب بالجامعة</a>
+                                </div>
+                                <div class='typeC'>
+                                    <a href="#">انشاء حساب طالب دراسات عليا</a>
+                                </div>
+                                <div class='typeC'>
+                                    <a href="register.php"> انشاء حساب دارس من خارج الجامعه</a>
+                                </div>
                             </div>
                         </div>
                     </div>

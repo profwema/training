@@ -2,47 +2,61 @@
 include('chicklog.php');
 require_once 'DBConnect.php';
 $db = new DBConnect();
-$section = 'categories';
+$section = 'center';
+//$sesion = 'center';
 
-if (isset($_GET['dell'])) {
-	$data['id'] = $_GET['dell'];
 
-	$db->delCategory($data);
+
+
+
+if (isset($_SESSION['Center']) )
+{
+	$data['id'] = $_SESSION['Center'];
+	$result = $db->getCenters($data);
+	$u = $result[0];
 }
+
+
+
+/* if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	echo $data['id'];
+	$p = basename($_SERVER['PHP_SELF']);
+	if(isset($_SERVER["QUERY_STRING"]));
+	{
+		$p =$p.'?'.$_SERVER["QUERY_STRING"];
+	}
+	$result = $db->editCenter($_POST, $data);
+ 	if ($result['status'])
+		$db->success($result['msg'], $sesion, $p);
+	else
+		$db->wrong($result['msg'], $sesion, $p);
+}  */
 ?>
 
 
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- start: HEAD -->
+
 <?php
 include('layout/head.php');
 ?>
 
-<!-- end: HEAD -->
 
-<!-- start: BODY -->
 
 <body class="rtl">
-
-    <!-- start: HEADER -->
     <?php
 	include('layout/header.php');
 	?>
-    <!-- end: HEADER -->
-
-    <!-- start: MAIN CONTAINER -->
     <div class="main-container">
-
-        <!-- start: NAVBAR -->
         <?php
 		include('layout/navbar.php');
 		?>
-        <!-- evd: NAVBAR -->
-
-        <!-- start: PAGE -->
         <div class="main-content">
-
-
             <div class="container">
                 <!-- start: PAGE HEADER -->
                 <div class="row">
@@ -58,10 +72,8 @@ include('layout/head.php');
                                 </a>
                             </li>
                             <li class="active">
-                                فئات الدورات
-
+                                بيانات المركز
                             </li>
-
                         </ol>
 
                         <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -74,67 +86,53 @@ include('layout/head.php');
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <i class="fa fa-external-link-square"></i>
-                                فئات الدورات
+                                بيانات المركز
                             </div>
                             <div class="panel-body">
-
                                 <div class="new">
-                                    <a href="category-Add.php"> اضافة فئة جديدة</a>
+                                    <!-- <a href="centerAdmin-Add.php">	اضافة مركز جديد</a> -->
                                 </div>
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <table class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th style="width: 40%;">اسم الفئة</th>
-                                            <!-- <th style="width: 40%;"></th> -->
-                                            <th style="width: 10%;">تحكم</th>
+                                            <th>المركز</th>
+                                            <th>الشعار</th>
+                                            <th> منصه التدريب</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-										$i = 0;
-										$arr['Center_fk'] = $_SESSION['Center'];
-										$cats = $db->getCategories($arr);
-
-										if (is_array($cats))
-											foreach ($cats as $cat) : $i++;
-										?>
                                         <tr>
-                                            <td><?= $cat['name'] ?></td>
-                                            <!-- 												<td>
-													<img src="<?= $cat['pic'] ?>" style='width:100px'>
-												</td> -->
+                                            <td><?= $u['name'] ?></td>
+                                            <td><img src="../images/logos/<?= $u['logo'] ?>" alt='' style='width:100px'>
+                                            </td>
                                             <td>
-                                                <a href="category-edit.php?edit=<?= $cat['id'] ?>" title='تعديل'><img
-                                                        src='assets/images/edit.png' alt='edit'></a>
-                                                <a href="categories.php?dell=<?= $cat['id'] ?>" title='حذف'><img
-                                                        src='assets/images/del.png' alt='del'></a>
+                                                <a class='login' target="_blank"
+                                                    href="https://training.tanta.edu.eg/<?= $u['moodle_url'] ?>">
+                                                    https://training.tanta.edu.eg/<?= $u['moodle_url'] ?>
+                                                </a>
                                             </td>
                                         </tr>
-
-                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end: PAGE CONTENT-->
             </div>
         </div>
-        <!-- end: PAGE -->
     </div>
-    <!-- end: MAIN CONTAINER -->
-
-    <!-- start: LEFT SIDEBAR -->
     <?php
 	include('layout/sidebar.php');
 	?>
     <!-- end: LEFT SIDEBAR -->
+
+
     <?php
 	include('layout/footer.php');
 	?>
-
 </body>
+
 <!-- end: BODY -->
 
 </html>

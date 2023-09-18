@@ -24,10 +24,17 @@ a.home span:hover {
   color: #fff;
 }
 
+.logout:hover {
+  background-color: rgb(126, 9, 9) !important;
+  color: #fff;
+}
+
+
 
 .userName {
   color: #f5f78c;
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .list-inline {
@@ -56,7 +63,6 @@ a.home span:hover {
   width: 90%;
 }
 
-.mainCenter .summary {}
 
 .mainCenter .summary .title {
   color: #1f3b77;
@@ -81,46 +87,7 @@ a.home span:hover {
 }
 
 
-/*
-.courses-section .course .course-summary .courList {
-  display: flex;
-}
 
-.courses-section .course .course-summary .courList .period {
-  display: inline-flex;
-  margin-left: 15px;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #045b1d;
-  padding: 5px;
-}
-
-.courses-section .course .course-summary .courList .cost {
-  display: inline-flex;
-  margin-right: 15px;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: red;
-  padding: 5px;
-
-}
-
-.courses-section .course .course-summary a {
-
-  font-size: 14px;
-  text-decoration: none;
-  line-height: 50px;
-  padding: 3px 10px;
-  border: solid 1px #045b1d;
-  border-radius: 2px;
-}
-
-
-.courses-section .course .course-summary a:hover {
-  background-color: #045b1d;
-  color: #fff;
-}
- */
 
 
 .single-top-popular-course {
@@ -502,9 +469,42 @@ input {
 
 }
 
+.newAcount {
+
+  margin: 25px auto;
+  width: 90%;
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 1px solid #77ccf9;
+  box-shadow: 0 1px 1px rgba(27, 67, 91, 0.716);
+  padding-bottom: 10px;
 
 
+}
 
+.newAcount .name {
+
+  padding: 10px 0;
+
+  background-color: rgb(166, 234, 249);
+  color: #1f3b77;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.newAcount .typeC {
+  text-align: center;
+  padding: 8px 0;
+  background-color: #d7f6ed;
+  border: 1px solid #d7f6ed;
+  margin: 20px;
+  margin-bottom: 10px;
+}
+
+.newAcount .typeC:hover {
+  border: 1px solid #72fae6;
+}
 
 .categories-section {
   margin: 30px 30px 30px 15px;
@@ -895,6 +895,36 @@ hr {
   color: brown;
 }
 
+.dashboardTitle {
+  margin: 20px 0px;
+  text-align: right;
+  background-color: #0084c9;
+  color: #FFF;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.userInf {
+  direction: rtl;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px 0;
+  border: #cdc9c9 solid 1px;
+  box-shadow: 0px 0px 10px 0px rgba(88, 96, 109, 0.14);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(88, 96, 109, 0.14);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(88, 96, 109, 0.14);
+  width: 100%;
+}
+
+.userInf tr {
+  border-bottom: #cdc9c9 solid 1px;
+}
+
+.userInf tr td {
+  padding: 10px;
+
+}
+
 .dashbord-section {
 
   margin: 20px 0px;
@@ -1148,9 +1178,10 @@ hr {
   border: #7a5723 solid 1px;
   padding-left: 10px;
   display: inline-block;
+}
 
-
-
+.course-reg .group-details .stell img {
+  width: 50px;
 }
 
 .course-reg .group-details center img {
