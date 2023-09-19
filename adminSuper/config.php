@@ -1,11 +1,5 @@
 <?php
-$host = "localhost"; /* Host name */
-$user = "root"; /* User */
-$password = ""; /* Password */
-$dbname = "tutorial"; /* Database name */
-
-$con = mysqli_connect($host, $user, $password,$dbname);
-// Check connection
-if (!$con) {
- die("Connection failed: " . mysqli_connect_error());
-}
+define('DBHOST','localhost');
+define('DBNAME','mcst-db');
+define('DBUSER','root');
+define('DBPASS','');
