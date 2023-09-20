@@ -1,0 +1,97 @@
+To create a user in Moodle using a PHP script and check if the user already exists, you can use Moodle's Web Services API along with a user lookup to verify if the user exists. Here's a PHP script that accomplishes this:
+
+
+<?php
+require_once('config.php'); // Include the Moodle configuration file
+
+// Define the user data
+$username = 'newuser'; // Replace with the desired username
+$password = 'password123'; // Replace with the desired password
+$firstname = 'John'; // Replace with the user's first name
+$lastname = 'Doe'; // Replace with the user's last name
+$email = 'john.doe@example.com'; // Replace with the user's email
+$auth = 'manual'; // Authentication method (manual for internal Moodle authentication)
+
+// Check if the user already exists by username
+$userExists = $DB->get_record('user', array('username' => $username));
+
+if ($userExists) {
+    echo "User with username '$username' already exists.";
+} else {
+    // Create a new user in Moodle
+    $user = new stdClass();
+    $user->username = $username;
+    $user->password = hash_internal_user_password($password);
+    $user->firstname = $firstname;
+    $user->lastname = $lastname;
+    $user->email = $email;
+    $user->auth = $auth;
+    
+    $userId = user_create_user($user);
+    
+    if ($userId) {
+        echo "User created successfully!";
+    } else {
+        echo "Error creating user.";
+    }
+}
+
+To enroll a user in a course and group in Moodle using PHP, you can use the Moodle Web Services API. Here's a basic example of PHP source code to enroll a user in a specific course and group:
+
+php
+Copy code
+<?php
+require_once('config.php'); // Include the Moodle configuration file
+
+// Define the user and course data
+$userId = 5; // Replace with the user's ID or username
+$courseId = 10; // Replace with the course ID
+$groupId = 2; // Replace with the group ID
+
+// Enroll the user in the course
+$enrollmentData = array(
+    'roleid' => 5, // Replace with the desired role ID (e.g., student role)
+    'userid' => $userId,
+    'courseid' => $courseId
+);
+
+$enrollmentResponse = enrol_manual_enrol_users($enrollmentData);
+
+// Check if the user was enrolled in the course successfully
+if ($enrollmentResponse) {
+    echo "User enrolled in the course successfully!<br>";
+
+    // Add the user to a group
+    groups_add_member($groupId, $userId);
+
+    echo "User added to the group successfully!";
+} else {
+    echo "Error enrolling user in the course.";
+}
+
+
+auto login and go to certun link 
+
+
+<?php
+require('config.php');
+$name='profwema';
+$password='Asd@203112564';
+$dashboard = $CFG->wwwroot;
+//echo $dashboard;
+$user = authenticate_user_login($name, $password);
+if(complete_user_login($user))
+{
+
+header("Location: ."$dashboard"./course/view.php?id=2");
+
+}
+else
+{
+   echo "not login";
+}
+
+
+
+?> 
+
