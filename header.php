@@ -62,24 +62,12 @@
                                         </ul>
                                     </div>
                                     <div class="mr-auto ml-auto">
-                                        <?php
-                                        if (isset($_SESSION['user'])) {
-                                        ?>
-                                        <a href="logout.php" class="small logout">
-                                            تسجيل خروج
+                                        <a href="dashboard.php" class="button">
+                                            <span>
+                                                حسابي
+                                            </span>
                                         </a>
-                                        <a href="dashboard.php" class="userName">
-                                            <?= $_SESSION['ar_name'] ?>
-                                        </a>
-                                        <?php
-                                        } else {
-                                        ?>
-                                        <a href="login.php" class="small login">
-                                            تسجيل دخول
-                                        </a>
-                                        <?php
-                                         }
-                                        ?>
+
                                     </div>
                                 </div>
                             </div>

@@ -9,24 +9,51 @@ a.home span:hover {
   color: #ffba00;
 }
 
-.small {
-  padding: 5px 10px !important;
-  color: #fff;
-  border: #FFF 2px solid;
-  border-radius: 20px;
-  float: left;
+.button {
+  border-radius: 15px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 3px 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 2px;
+
+}
+
+.button:hover {
+
+  color: #FFFFFF;
 
 
 }
 
-.login:hover {
-  background-color: rgb(60, 99, 22) !important;
-  color: #fff;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.logout:hover {
-  background-color: rgb(126, 9, 9) !important;
-  color: #fff;
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -15px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-left: 15px;
+
+}
+
+.button:hover span:after {
+  opacity: 1;
+  left: 0;
 }
 
 
