@@ -33,18 +33,27 @@ if (isset($_GET['putAtGroup'])) {
             </nav>
             <div class="container">
                 <div class="row">
+                    <div>
+                        مرحبا :
+                        <?= $_SESSION['ar_name'] ?>
+                    </div>
                     <div class="single-top-popular-course d-flex flex-wrap mb-30 wow fadeInUp" data-wow-delay="400ms">
                         <div class="col-lg-3">
                             <div class="dashbord-list">
                                 <ul>
                                     <li>
                                         <a href="dashboard.php">
-                                            <i class="fa fa-list"></i> الدورات الملتحق بها
+                                            <i class="fa fa-list"></i> الدورات المشترك فيها
                                         </a>
                                     </li>
                                     <li class="active">
                                         <a href="javascript:void(0)">
-                                            <i class="fa fa-id-card"></i> معلومات شخصية
+                                            <i class="fa fa-user-circle"></i> اعدادات الحساب
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="logout.php">
+                                            <i class="fa fa-sign-out"></i> تسجيل الخروج
                                         </a>
                                     </li>
                                 </ul>

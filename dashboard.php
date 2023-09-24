@@ -67,11 +67,6 @@ if (isset($_GET['putAtGroup'])) {
                                     </li>
                                     <li>
                                         <a href="updateInf.php">
-                                            <i class="fa fa-shopping-cart"></i> دورات قيد الاشتراك
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="updateInf.php">
                                             <i class="fa fa-user-circle"></i> اعدادات الحساب
                                         </a>
                                     </li>
