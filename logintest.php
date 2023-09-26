@@ -1,5 +1,10 @@
 <?php
-require('config.php');
+
+$fileName = 'http://academy.almubarmig.com/config.php';
+if (file_exists($fileName)) {
+   echo 'yes';
+}
+/* require('config.php');
 $name='profwema';
 $password='Asd@203112564';
 $dashboard = $CFG->wwwroot;
@@ -16,6 +21,6 @@ else
    echo "not login";
 }
 
-
+ */
 
 ?>
