@@ -1,7 +1,8 @@
 <?php
 
 $fileName = 'http://academy.almubarmig.com/config.php';
-if (file_exists($fileName)) {
+if (include($fileName)) 
+{
    echo 'yes';
 }
 /* require('config.php');
