@@ -1,4 +1,4 @@
-To create a user in Moodle using a PHP script and check if the user already exists, you can use Moodle's Web Services API along with a user lookup to verify if the user exists. Here's a PHP script that accomplishes this:
+
 
 
 <?php
