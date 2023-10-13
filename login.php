@@ -120,9 +120,9 @@ $(document).ready(function() {
                                 <div class='typeC'>
                                     <a href="#">انشاء حساب طالب دراسات عليا</a>
                                 </div>
-                                <div class='typeC'>
+                                <!--                                 <div class='typeC'>
                                     <a href="#">انشاء حساب عضو هيئة تدريس</a>
-                                </div>
+                                </div> -->
                                 <div class='typeC'>
                                     <a href="register.php"> انشاء حساب دارس من خارج الجامعه</a>
                                 </div>
