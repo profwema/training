@@ -115,16 +115,16 @@ $(document).ready(function() {
                             <div class="newAcount">
                                 <div class="name"> لبس لديك حساب بالفعل : قم بانشاء حساب جديد</div>
                                 <div class='typeC'>
-                                    <a href="#">انشاء حساب لطالب بالجامعة</a>
+                                    <a href="#">انشاء حساب لطالب بالمرحلة الجامعية بالجامعة</a>
                                 </div>
                                 <div class='typeC'>
-                                    <a href="#">انشاء حساب طالب دراسات عليا</a>
+                                    <a href="#">انشاء حساب لطالب دراسات عليا بالجامعة</a>
                                 </div>
-                                <div class='typeC'>
+                                <!--                                 <div class='typeC'>
                                     <a href="#">انشاء حساب عضو هيئة تدريس</a>
-                                </div>
+                                </div> -->
                                 <div class='typeC'>
-                                    <a href="register.php"> انشاء حساب دارس من خارج الجامعه</a>
+                                    <a href="register.php"> انشاء حساب لدارس من خارج الجامعه</a>
                                 </div>
                             </div>
                         </div>
