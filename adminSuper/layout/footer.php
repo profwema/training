@@ -1,14 +1,14 @@
 <!-- start: FOOTER -->
 <div class="footer clearfix">
-	<div class="footer-inner center">
-		<p>
-			<img src="../images/logos/telc.png" alt="" style="width: 90px;">
-			جميع الحقوق محفوظة ©
-			<a target="_blank" href="http://telc.tanta.edu.eg">مركز التعليم الإلكتروني</a>- جامعة طنطا | 2023
+    <div class="footer-inner center">
+        <p>
+            <img src="../images/logos/telc.png" alt="" style="width: 90px;">
+            جميع الحقوق محفوظة ©
+            <a target="_blank" href="http://telc.tanta.edu.eg">مركز التعليم الإلكتروني</a>- جامعة طنطا | 2023
 
-		</p>
+        </p>
 
-	</div>
+    </div>
 </div>
 <!-- end: FOOTER -->
 
@@ -39,8 +39,8 @@
 
 
 <script type="text/javascript">
-	$(document).ready(function() {
+$(document).ready(function() {
 
-		$('#example').DataTable();
-	});
+    $('#example').DataTable();
+});
 </script>

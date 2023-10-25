@@ -58,25 +58,8 @@ if (isset($_GET['putAtGroup'])) {
 
 
                         <div class="col-lg-3">
-                            <div class="dashbord-list">
-                                <ul>
-                                    <li class="active">
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-list"></i> الدورات المشترك فيها
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="updateInf.php">
-                                            <i class="fa fa-user-circle"></i> اعدادات الحساب
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="logout.php">
-                                            <i class="fa fa-sign-out"></i> تسجيل الخروج
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php $dashSection= 'myCourses';?>
+                            <?php include('dashMenu.php') ?>
                         </div>
                         <div class="col-lg-9">
                             <div class="dashboardTitle">الدورات الملتحق بها</div>
