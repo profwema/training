@@ -58,7 +58,7 @@ if (isset($_GET['putAtGroup'])) {
 
 
                         <div class="col-lg-3">
-                            <?php $dashSection= 'userSammary';?>
+                            <?php $dashSection= 'userSummary';?>
                             <?php include('dashMenu.php') ?>
                         </div>
                         <div class="col-lg-9">

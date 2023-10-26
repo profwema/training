@@ -4,7 +4,7 @@ require_once 'adminSuper/DBConnect.php';
 require_once 'pageState.php';
 $db = new DBConnect();
 if (isset($_SESSION['user'])) {
-    header("Location:dashboard.php");
+    header("Location:userSummary.php");
 }
 
 

@@ -62,7 +62,7 @@
                                         </ul>
                                     </div>
                                     <div class="mr-auto ml-auto">
-                                        <a href="dashboard.php" class="button">
+                                        <a href="userSummary.php" class="button">
                                             <span>
                                                 حسابي
                                             </span>

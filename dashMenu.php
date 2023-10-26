@@ -1,8 +1,8 @@
                             <div class="dashbord-list">
                                 <ul>
 
-                                    <li class='<?php if ($dashSection == 'userSammary') echo "active" ?>'>
-                                        <a href="userSammary.php">
+                                    <li class='<?php if ($dashSection == 'userSummary') echo "active" ?>'>
+                                        <a href="userSummary.php">
                                             <i class="fa fa-list"></i> ادارة الحساب
                                         </a>
                                     </li>

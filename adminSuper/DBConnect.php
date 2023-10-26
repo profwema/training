@@ -645,6 +645,7 @@ class DBConnect
     {
         return $this->select($table, $data);
     }
+    
 
     public function goAhed($arr = [])
     {
