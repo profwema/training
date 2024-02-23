@@ -1,0 +1,95 @@
+add course to moodle 
+// Include Moodle configuration
+require_once('config.php');
+
+// Include necessary Moodle core files
+require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir.'/filelib.php');
+require_once($CFG->dirroot.'/course/lib.php');
+
+// Set up necessary parameters
+$course = new stdClass();
+$course->fullname = 'Your Course Name';
+$course->shortname = 'your_course_shortname';
+$course->category = 1; // Set the category ID where you want to add the course
+$course->summary = 'Your course summary';
+$course->format = 'topics'; // Choose the desired course format
+$course->visible = 1; // Set to 0 if you want the course to be hidden
+
+// Check for capabilities
+if (!has_capability('moodle/course:create', context_system::instance())) {
+    print_error('errornothavecreatecourse', 'error');
+}
+
+// Add the course
+$courseid = create_course($course);
+
+// Output success message
+echo 'Course added successfully. Course ID: ' . $courseid;
+
+
+add category 
+
+// Include Moodle configuration
+require_once('config.php');
+
+// Include necessary Moodle core files
+require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir.'/filelib.php');
+require_once($CFG->dirroot.'/course/lib.php');
+
+// Set up necessary parameters
+$category = new stdClass();
+$category->name = 'Your Category Name';
+$category->id = 0; // Set to 0 for a new category, or use the category ID if updating an existing one
+$category->description = 'Your category description';
+$category->descriptionformat = FORMAT_HTML;
+
+// Check for capabilities
+if (!has_capability('moodle/course:create', context_system::instance())) {
+    print_error('errornothavecreatecategory', 'error');
+}
+
+// Add or update the category
+if ($category->id) {
+    coursecat::update($category);
+} else {
+    coursecat::create($category);
+}
+
+// Output success message
+echo 'Category added/updated successfully.';
+
+
+
+
+
+
+// Include Moodle configuration
+require_once('config.php');
+
+// Include necessary Moodle core files
+require_once($CFG->libdir.'/adminlib.php');
+require_once($CFG->libdir.'/filelib.php');
+require_once($CFG->dirroot.'/course/lib.php');
+
+// Set up necessary parameters
+$category = new stdClass();
+$category->name = 'Your Category Name';
+$category->description = 'Your category description';
+$category->descriptionformat = FORMAT_HTML;
+
+// Determine the parent category ID (set to 0 for a top-level category)
+$parentCategoryID = 1; // Change this to the ID of the desired parent category
+
+// Check for capabilities
+if (!has_capability('moodle/course:create', context_system::instance())) {
+    print_error('errornothavecreatecategory', 'error');
+}
+
+// Add the category
+$categoryid = coursecat::create($category, $parentCategoryID);
+
+// Output success message
+echo 'Category added successfully. Category ID: ' . $categoryid;
+
