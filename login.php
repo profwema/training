@@ -4,7 +4,7 @@ require_once 'adminSuper/DBConnect.php';
 require_once 'pageState.php';
 $db = new DBConnect();
 if (isset($_SESSION['user'])) {
-    header("Location:userSummary.php");
+    header("Location:bashboard.php");
 }
 
 
@@ -32,19 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <?php require_once("head.php"); ?>
 <script type="text/javascript">
-$(document).ready(function() {
-    $(".toggle-password").click(function() {
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
+    $(document).ready(function() {
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+
     });
-
-
-});
 </script>
 
 <body class="home-page">
@@ -67,14 +67,14 @@ $(document).ready(function() {
 
                         <div class="col-lg-6">
                             <?php
-                        if (isset($error)) {
-                        ?>
-                            <div class="alert worng">
-                                <?= $error ?>
-                            </div>
+                            if (isset($error)) {
+                            ?>
+                                <div class="alert worng">
+                                    <?= $error ?>
+                                </div>
                             <?php
-                        }
-                        ?>
+                            }
+                            ?>
                             <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
                                 <div class="form-group">
                                     <div class="name"> بيانات تسجيل الدخول *</div>

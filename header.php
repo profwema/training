@@ -34,31 +34,39 @@
                                 <div class="d-flex">
                                     <div class="mr-auto ml-auto ">
                                         <ul class="list-inline align-items-right">
+
                                             <li class="list-inline-item">
-                                                <a href="https://nsite3.tanta.edu.eg/stu-services.aspx"><i
-                                                        class="fa fa-user ml-1" aria-hidden="true" title="الطلاب"></i>
-                                                    خدمات طلاب</a>
+                                                <a href="index"><i class="fa fa-cubes ml-1" aria-hidden="true"
+                                                        title="الرئيسية"></i>
+                                                    الرئيسية</a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a href="https://nsite3.tanta.edu.eg/post-services.aspx"><i
-                                                        class="fa fa-graduation-cap ml-1" aria-hidden="true"
-                                                        title="الدراسات العليا"></i> الدراسات العليا</a>
+                                            <li class="list-inline-item dropdown">
+                                                <a href="index"><i class="fa fa-cubes ml-1" aria-hidden="true"
+                                                        title="المراكز الفرعية"></i>
+                                                    المراكز الفرعية</a>
+                                                <div class="dropdown-content">
+
+                                                    <?php
+                                                    $i = 0;
+                                                    $users = $db->getCenters();
+
+                                                    if (isset($users)) $i++;
+                                                    foreach ($users as $u) : $i++;
+                                                    ?>
+
+
+                                                    <a href="centercats.php?center=<?= $u['id'] ?>">
+                                                        <?= $u['name'] ?>
+                                                    </a>
+
+                                                    <?php endforeach; ?>
+
+
+
+                                                </div>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a href="https://nsite3.tanta.edu.eg/staff-services.aspx"><i
-                                                        class="fa fa-users ml-1" aria-hidden="true"
-                                                        title="أعضاء هيئة التدريس"></i> أعضاء هيئة التدريس</a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="https://nsite3.tanta.edu.eg/emp-services.aspx"><i
-                                                        class="fa fa-book ml-1" aria-hidden="true" title="العاملون"></i>
-                                                    خدمات العاملين</a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="https://nsite3.tanta.edu.eg/other-services.aspx"><i
-                                                        class="fa fa-cubes ml-1" aria-hidden="true" title="الخدمات"></i>
-                                                    الخدمات</a>
-                                            </li>
+
+
                                         </ul>
                                     </div>
                                     <div class="mr-auto ml-auto">
