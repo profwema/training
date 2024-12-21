@@ -80,3 +80,44 @@
 /*	Up To Medium Devices
  /* ---------------------------------------------------------------------- */
 @media (min-width: 768px) {}
+
+
+
+
+
+
+
+
+.dropdown-content {
+padding-top: 15px;
+  display: none;
+  position: absolute;
+  min-width: 300px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  background-color: rgba(41, 7, 46, 0.74);
+  color: rgb(255, 254, 254) !important;
+  padding: 10px !important;
+  text-decoration: none;
+  display: block;
+  border-bottom: #5d5e5b 1px solid;
+  font-size: 14px !important;
+}
+.dropdown-content a:last-child {
+
+  border-bottom: none;
+}
+
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #c5d81b !important;
+	color: #000 !important;
+
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}

@@ -2,8 +2,8 @@
     <div class="copyright text-center">
 
         منصة المركز الرئيسي للتدريب المستدام من تصميم وتطوير وادارة
-        <a target="_blank" href="http://telc.tanta.edu.eg"> مركز انتاج المقررات الإلكترونية <img
-                src="images/logos/telc.png" alt="" style="width: 90px;"></a> - الحقوق محفوظة © جامعة طنطا | 2023
+        <a target="_blank" href="http://telc.tanta.edu.eg"> وحدة انتاج المقررات الإلكترونية <img
+                src="images/logos/telc.png" alt="" style="width: 90px;"></a> - الحقوق محفوظة © جامعة طنطا | 2024
     </div>
 
 </div>

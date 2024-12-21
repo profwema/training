@@ -47,35 +47,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <?php require_once("head.php"); ?>
 <script type="text/javascript">
-$(document).ready(function() {
-    $(".toggle-password").click(function() {
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
+    $(document).ready(function() {
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        $('input[name="idType"]').on('click', function() {
+            if ($(this).val() == '2') {
+                $('#passp').show();
+                $('#passp input[name="passNo"]').prop('required', true);
+                $('#natid').hide();
+                $('#natid input[name="idNo"]').val('');
+                $('#natid input[name="idNo"]').prop('required', false);
+            } else {
+                $('#natid').show();
+                $('#natid input[name="idNo"]').prop('required', true);
+                $('#passp').hide();
+                $('#passp input[name="passNo"]').val('');
+                $('#passp input[name="passNo"]').prop('required', false);
+            }
+        });
+        $('#myCheckbox').click(function() {
+            $('#submit').prop("disabled", !$("#myCheckbox").prop("checked"));
+        })
     });
-    $('input[name="idType"]').on('click', function() {
-        if ($(this).val() == '2') {
-            $('#passp').show();
-            $('#passp input[name="passNo"]').prop('required', true);
-            $('#natid').hide();
-            $('#natid input[name="idNo"]').val('');
-            $('#natid input[name="idNo"]').prop('required', false);
-        } else {
-            $('#natid').show();
-            $('#natid input[name="idNo"]').prop('required', true);
-            $('#passp').hide();
-            $('#passp input[name="passNo"]').val('');
-            $('#passp input[name="passNo"]').prop('required', false);
-        }
-    });
-    $('#myCheckbox').click(function() {
-        $('#submit').prop("disabled", !$("#myCheckbox").prop("checked"));
-    })
-});
 </script>
 
 <body class="home-page">
@@ -106,9 +106,9 @@ $(document).ready(function() {
                         <?php
                         if (isset($error)) {
                         ?>
-                        <div class="alert worng">
-                            <?= implode('<br>', $error) ?>
-                        </div>
+                            <div class="alert worng">
+                                <?= implode('<br>', $error) ?>
+                            </div>
                         <?php
                         }
                         ?>
